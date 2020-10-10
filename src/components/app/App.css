@@ -1,0 +1,21 @@
+.main {
+    overflow: auto;
+}
+
+.appLayout {
+    display: grid;
+    grid-template-rows: 7fr 88fr 5fr;
+    height: 100%;
+}
+
+.conteiner {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+* {
+    font-family: Roboto, sans-serif;
+}
