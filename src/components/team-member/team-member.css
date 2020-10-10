@@ -1,0 +1,39 @@
+.divTeamMemberConteiner:hover {
+    background-color: rgba(213, 176, 242, 0.1);
+}
+
+.divTeamMemberConteiner {
+    border:1px solid #E5E5E5;
+    display: grid;
+    grid-template-columns: 10fr 60fr 30fr;
+    height: 100%;
+    border-collapse:collapse;
+    border-spacing: 0;
+}
+
+.divPicture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5em;
+    height: 5em;
+}
+
+.divName {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.spanName {
+    margin-left: 1em;
+    color: #59636E;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.divButton {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2em;
+}

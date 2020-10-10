@@ -1,0 +1,19 @@
+.header {
+    background: #F2F3F4;
+    display: grid;
+    grid-template-columns: 10fr 90fr;
+    height: 100%;
+}
+
+.divTitle{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.spanHonesto{
+    position: relative;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000
+}

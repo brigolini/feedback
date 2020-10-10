@@ -1,0 +1,25 @@
+.spanTitle {
+    font-size: 31px;
+    line-height: 36px;
+    font-weight: bold;
+    color: #031323;
+}
+
+.spanSubTitle {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #ACB1B6;
+}
+
+.divText{
+    display: flex;
+    flex-direction: column;
+}
+
+.divPageTitle {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
