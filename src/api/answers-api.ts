@@ -1,7 +1,7 @@
 import {User} from "./users-api";
 import {PossibleAnswers} from "../components/question-for-answer/question-for-answer";
 
-interface CompleteAnswer {
+export interface CompleteAnswer {
     memberId: string;
     questionNumber: number,
     answer: PossibleAnswers

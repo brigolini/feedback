@@ -4,6 +4,7 @@ import {Avatar} from "@material-ui/core";
 import {useAppContext} from "../../context/app-context";
 import {useHistory} from "react-router-dom";
 import FeedBackReviewList from "../../components/feedback-review-list/feedback-review-list";
+import './review-feedback-page.css'
 
 
 const ReviewFeedBackPage = () => {
@@ -24,7 +25,7 @@ const ReviewFeedBackPage = () => {
                                                                                            src={user?.avatar}/></div>}/>
                     </div>
                     <div>
-                        <FeedBackReviewList/>
+                        <FeedBackReviewList member={user}/>
                     </div>
                 </div>
 

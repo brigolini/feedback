@@ -1,19 +1,58 @@
-import {useAppContext} from "../../context/app-context";
-import {getAnswers} from "../../api/answers-api";
-import {useHistory} from "react-router-dom";
+import {CompleteAnswer, getAnswers} from "../../api/answers-api";
 import React from "react";
+import {useQuestionList} from "../question-list/use-question-list";
+import {User} from "../../api/users-api";
+import {Question} from "../../api/questions-api";
+import './feedback-review-list.css'
+import ReviewScale from "../review-scale/review-scale";
 
 
-const FeedBackReviewList = () => {
-    const [state, dispatch] = useAppContext();
-    const history = useHistory();
-    if (!state.user) {
-        history.push('/');
-        return null;
+const FeedBackReview = (props: { question: Question, answer: CompleteAnswer }) => {
+    const {question, answer} = props;
+    if (question.type === 'text') {
+        return (<div className={'feedbackItem'}>
+            <div className={'divFeedBackReviewQuestion'}>{question.label}</div>
+            <div>{answer.answer}</div>
+        </div>);
     }
-    const feedbacks = getAnswers(state.user);
+    if (question.type === 'multipleChoice') {
+        if ((!question.options) || (!answer.answer)) return null;
+        const answerOption = question.options.find(item => item.value == answer.answer);
+        return (<div className={'feedbackItem'}>
+            <div className={'divFeedBackReviewQuestion'}>{question.label}</div>
+            <div>{answerOption ? answerOption.label : null}</div>
+        </div>);
+    }
+    if (question.type === 'scale') {
+        if (!answer.answer) return null;
+        return (<div className={'feedbackItem'}>
+            <div className={'divFeedBackReviewQuestion'}>{question.label}</div>
+            <div><ReviewScale value={answer.answer}/></div>
+        </div>);
+    }
+    return null;
+}
+
+
+interface FeedbackReviewListProps {
+    member: User;
+}
+
+const FeedBackReviewList = (props: FeedbackReviewListProps) => {
+    const {member} = props;
+    const {list, status} = useQuestionList(member);
+    const feedbacks = getAnswers(member);
+    if (status === 'loading') return <span>Loading</span>
     return (
-        <div>{feedbacks.map(item => <div>{item.answer}</div>)}</div>
+        <>
+            <div className={'feedbackItem'}>
+                <span>Question</span>
+                <span>Answer</span>
+            </div>
+            <div>{feedbacks.map((answer, index) => <div>
+                <FeedBackReview question={list[index]} answer={answer}/></div>)}
+            </div>
+        </>
     )
 }
 

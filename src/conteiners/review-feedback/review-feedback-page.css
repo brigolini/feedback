@@ -1,0 +1,10 @@
+.divTitle {
+    display: flex;
+    height: 6em;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+}

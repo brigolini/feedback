@@ -5,7 +5,7 @@ export interface Question {
     label: string;
     required: boolean;
     type: 'text' | 'multipleChoice' | 'scale'
-    options?: Option
+    options?: Option[]
 }
 
 export interface Option {
