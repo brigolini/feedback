@@ -13,10 +13,7 @@ const Main = () => {
                     <Route path={'/'} exact component={ShareFeedBackPage}/>
                     <Route path={'/questions'} component={QuestionsPage}/>
                     <Route path={'/review'} component={ReviewFeedBackPage}/>
-                    <Route path={'/error'} component={ErrorPage}/>
-                    {/*<Route path={'*'} exact
-                           render={(props) => <ErrorPage
-                               errorMessage={'Sorry! The page you are looking for cannot be found.'}/>}/>*/}
+                    <Route path={'*'} exact component={ErrorPage}/>
                 </Switch>
             </BrowserRouter>
         </main>
