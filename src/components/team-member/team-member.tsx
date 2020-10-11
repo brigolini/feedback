@@ -3,8 +3,9 @@ import './team-member.css'
 import {Avatar, Button} from "@material-ui/core";
 import {User} from "../../api/users-api";
 import {useHistory} from "react-router-dom";
-import {setUser, useAppContext} from "../../context/app-context";
+import {useAppContext} from "../../context/app-context";
 import {getAnswers} from "../../api/answers-api";
+import {setUser} from "../../context/actions";
 
 interface TeamMemberProps {
     member: User;

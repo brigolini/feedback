@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 
 
 interface ItemProps {
@@ -24,11 +24,7 @@ interface ScaleProps {
 }
 
 const ReviewScale = (props: ScaleProps) => {
-    const [valueClick, setValueClick] = useState<string | number>(0);
     const {value} = props;
-    useEffect(() => {
-        setValueClick(value);
-    }, [value])
     const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     return (
         <>
