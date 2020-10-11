@@ -4,7 +4,7 @@
 
 .appLayout {
     display: grid;
-    grid-template-rows: 6fr 89fr 5fr;
+    grid-template-rows: 7fr 90fr 3fr;
     height: 100%;
 }
 

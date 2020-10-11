@@ -8,16 +8,6 @@ const Header = () => {
             <div className={'divUser'}></div>
         </div>
     )
-    /*
-            <span style={{
-            position: "relative",
-                left: '5%',
-                top: '15%',
-                fontFamily: 'Untitled Sans',
-                fontSize: '24px',
-                lineHeight: '28px',
-                color: '#000000'
-        }}>Honesto</span>*/
 }
 
 export default Header

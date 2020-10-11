@@ -1,10 +1,11 @@
-.divTitle {
+.divFeedBackTitle {
     display: flex;
     height: 6em;
 }
 
-.content {
+.shareFeedbackConteiner {
     display: flex;
     flex-direction: column;
     align-content: stretch;
+    padding: 2em
 }

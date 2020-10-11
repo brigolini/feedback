@@ -17,9 +17,9 @@ const ReviewFeedBackPage = () => {
     }
     return (
         <div className={'conteiner'}>
-            <div className={'content'}>
+            <div className={'shareFeedbackConteiner'}>
                 <div>
-                    <div className={'divTitle'}>
+                    <div className={'divFeedBackTitle'}>
                         <PageTitle title={`YOUR FEEDBACK FOR  ${user?.firstName} ${user?.lastName}`}
                                    rightElement={<div style={{paddingLeft: '1em'}}><Avatar sizes={'large'}
                                                                                            src={user?.avatar}/></div>}/>

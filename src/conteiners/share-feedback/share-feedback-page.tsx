@@ -7,7 +7,7 @@ const ShareFeedBack = () => {
     return (
         <div className={'conteiner'}>
             <div className={'content'}>
-                <div>
+                <div className={'divShareFeedbackTitle'}>
                     <PageTitle title={"Share Feedback"}/>
                 </div>
                 <TeamMemberList/>
