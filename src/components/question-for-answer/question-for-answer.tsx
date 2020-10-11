@@ -91,17 +91,18 @@ const QuestionForAnswer = (props: QuestionForAnswerProps) => {
             </div>
             <div className={'divButtons'}>
                 <div>
-                    <Button variant={'outlined'} className={'button'} size={'large'}
+                    <Button variant={'outlined'} className={'button'} size={'large'} id={'previousButton'}
                             onClick={() => onAction('previous', answer)} disabled={current === 0}>Previous
                     </Button>
                 </div>
                 <div>
                     <Button variant={'outlined'} className={'button'} disabled={question.required}
+                            id={'skipButton'}
                             size={'large'} onClick={() => onAction('skip', answer)}>Skip
                     </Button>
                 </div>
                 <div>
-                    <Button variant={'outlined'} className={'button'} size={'large'}
+                    <Button variant={'outlined'} className={'button'} size={'large'} id={'nextButton'}
                             disabled={(answer === null) || answer === 0}
                             onClick={() => onAction('next', answer)}>{current === total - 1 ? <span>Finish</span> :
                         <span>Next</span>}

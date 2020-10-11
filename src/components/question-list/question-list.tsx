@@ -3,13 +3,14 @@ import {useQuestionList} from "./use-question-list";
 import React from "react";
 import QuestionForAnswer from "../question-for-answer/question-for-answer";
 import {useHistory} from "react-router-dom";
+import {Skeleton} from "@material-ui/lab";
 
 interface QuestionListProps {
     member: User;
 }
 
 const ScheletonQuestion = () => {
-    return <span>loading</span>
+    return <span><Skeleton style={{width: '260px'}} variant={'text'}/></span>
 }
 const QuestionList = (props: QuestionListProps) => {
     const {member} = props;

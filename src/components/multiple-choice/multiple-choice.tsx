@@ -30,8 +30,8 @@ const MultipleChoice = (props: MultipleChoiceProps) => {
     if (!options) return null;
     return (
         <>
-            {options.map(option =>
-                <Choice option={option} onSelect={(() => setItemSelected(option.value))}
+            {options.map((option, index) =>
+                <Choice option={option} key={index} onSelect={(() => setItemSelected(option.value))}
                         selected={itemSelected === option.value}/>
             )}
         </>

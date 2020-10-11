@@ -3,7 +3,7 @@ import {AppState, reducer} from "./reducer";
 import {AppAction} from "./actions";
 
 
-const initialState = {user: undefined, error: undefined}
+export const initialState = {user: undefined, error: undefined}
 const AppContext = React.createContext<[AppState, Dispatch<AppAction>]>([initialState, value => {
 }])
 
