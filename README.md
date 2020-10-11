@@ -1,44 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Important points
+1. It took me 9 hours to finished up all the project. As the exercise time limit was 8 hours, I prefer to stop. I delivered all features on my document, but some part of the code could be better. I will let you know in the session "What can be better".
+2. I create CSS as responsive as possible. Used grid layout in order to work in other medias. But I still need to create mediaqueries.
+3. The answer data is in sessionStorage. I created very simple and tiny a API mock layer to save it.
+4. The app was really enough to don't need global state. I create one just to let you know how I would approach an easy global state. 
 
-## Available Scripts
+## What can be better (What I did not complete)
 
-In the project directory, you can run:
+1. Some component's code need to be refactor to be easy to read. As an example question-for-answer.tsx needs to be refactoring and maybe break.
+2. Error handling could be a lot better, maybe an automatic retry, definitely error-page send back to the page that calls it.
+3. Next button should not be able if you don't answer question. I did it for multiple choice but need to be done for the others.
+4. Test coverage is very poor. I believe we need at least 3 more hours on testing.
+5. Layout needs to be brushed up. As the exercise said it's not a priority, I never change some poor layout.
+6. Component directory deserves a good refactoring in order to be easy to maintain.
+7. Better patterns do Don't Repeat Myself
 
-### `yarn start`
+## Code hours
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+My code hours were divided like this:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* Layout / components / containers - 6 hours
+* Global state - 1 hour
+* Unit tests - 1 hour
+* Logic and API - 1 hour
 
-### `yarn test`
+## Changes if I had one week delivered  
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. A lot more unit and integration tests
+2. Better layout and CSS
+3. I would create some abstractions in order to follow DRY
+4. I would love to review the code to find some potential problems.
+5. Some code refactoring as I mentioned in "what can be better". 
