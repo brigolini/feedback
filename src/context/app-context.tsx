@@ -30,7 +30,6 @@ const AppProvider: FunctionComponent = (props) => {
 
 function useAppContext() {
     const context = React.useContext(AppContext)
-    console.info(context);
     if (context === undefined) throw new Error(`You only can useApp in AppContext`)
     return context
 }

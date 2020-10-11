@@ -2,12 +2,15 @@ import {getQuestions, Question} from "../../api/questions-api";
 import {User} from "../../api/users-api";
 import {useEffect, useState} from "react";
 import {AsyncStatus} from "../common/AsyncStatus";
+import {OnActionParams, PossibleAnswers} from "../question-for-answer/question-for-answer";
+import {postAnswer} from "../../api/answers-api";
 
 
 interface QuestionListReturn {
     currentQuestion: number;
     list: Question[];
     status: AsyncStatus;
+    setAnswer: (action: OnActionParams, answer: PossibleAnswers) => void
 }
 
 export const useQuestionList = (member: User): QuestionListReturn => {
@@ -17,7 +20,8 @@ export const useQuestionList = (member: User): QuestionListReturn => {
     useEffect(() => {
         const fn = async () => {
             try {
-                const questions = await getQuestions();
+                let questions = await getQuestions();
+                //questions = questions.filter(question=>question.type==='multipleChoice')
                 setList(questions);
                 setStatus('done');
                 setCurrentQuestion(0);
@@ -29,6 +33,14 @@ export const useQuestionList = (member: User): QuestionListReturn => {
 
     }, [member])
 
-    return {list, status, currentQuestion}
+    const setAnswer = (action: OnActionParams, answer: PossibleAnswers) => {
+        if (action === 'previous') {
+            setCurrentQuestion(currentQuestion - 1);
+        } else {
+            postAnswer(member, answer, currentQuestion);
+            setCurrentQuestion(currentQuestion + 1);
+        }
+    }
+    return {list, status, currentQuestion, setAnswer}
 
 }

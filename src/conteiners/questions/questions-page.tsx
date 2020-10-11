@@ -1,18 +1,21 @@
 import React from 'react'
-import PageTitle from "../../components/page-title/page-title";
 import './questions-page.css'
 import {useAppContext} from "../../context/app-context";
+import QuestionList from "../../components/question-list/question-list";
+import {useHistory} from "react-router-dom";
 
 const QuestionsPage = () => {
     const [state] = useAppContext();
-    console.info(state);
+    const history = useHistory();
+    if (state.user === undefined) {
+        history.push('/');
+        return null;
+    }
     return (
         <div className={'conteiner'}>
             <div className={'content'}>
                 <div>
-                    <PageTitle
-                        title={"What would you like this person to work on the most during the next month, to enable their continued growth?"}
-                        rightElement={<div>Test</div>}/>
+                    <QuestionList member={state.user}/>
                 </div>
 
             </div>

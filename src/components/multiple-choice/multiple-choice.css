@@ -1,0 +1,17 @@
+.divGenericOption {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 3em;
+    border: 1em;
+}
+
+.divOptionSelected {
+    background-color: #59636E;
+    color: #FFFFFF;
+}
+
+.divOptionUnselected {
+    background-color: #F2F3F4;
+    color: #031323;
+}
