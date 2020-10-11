@@ -5,6 +5,7 @@ import {User} from "../../api/users-api";
 import {Question} from "../../api/questions-api";
 import './feedback-review-list.css'
 import ReviewScale from "../review-scale/review-scale";
+import ErrorPage from "../../conteiners/error/error-page";
 
 
 const FeedBackReview = (props: { question: Question, answer: CompleteAnswer }) => {
@@ -42,7 +43,11 @@ const FeedBackReviewList = (props: FeedbackReviewListProps) => {
     const {member} = props;
     const {list, status} = useQuestionList(member);
     const feedbacks = getAnswers(member);
+
     if (status === 'loading') return <span>Loading</span>
+    if (status === 'error') {
+        return <ErrorPage errorMessage={'We could not connect to our servers, try again latter'}/>;
+    }
     return (
         <>
             <div className={'feedbackItem'}>

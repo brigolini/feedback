@@ -3,6 +3,7 @@ import {useQuestionList} from "./use-question-list";
 import React from "react";
 import QuestionForAnswer from "../question-for-answer/question-for-answer";
 import {useHistory} from "react-router-dom";
+import ErrorPage from "../../conteiners/error/error-page";
 
 interface QuestionListProps {
     member: User;
@@ -26,7 +27,10 @@ const QuestionList = (props: QuestionListProps) => {
                                                      total={list.length}
                                                      current={currentQuestion}
     />
-    if (status === 'error') return <span>error</span>
+    if (status === 'error') {
+        return <ErrorPage errorMessage={'We could not connect to our servers, try again latter.'}/>;
+    }
+
     return null;
 
 }
