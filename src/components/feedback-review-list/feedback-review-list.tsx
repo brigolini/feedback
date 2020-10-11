@@ -5,7 +5,7 @@ import {User} from "../../api/users-api";
 import {Question} from "../../api/questions-api";
 import './feedback-review-list.css'
 import ReviewScale from "../review-scale/review-scale";
-import ErrorPage from "../../conteiners/error/error-page";
+import {useHistory} from "react-router-dom";
 
 
 const FeedBackReview = (props: { question: Question, answer: CompleteAnswer }) => {
@@ -43,10 +43,12 @@ const FeedBackReviewList = (props: FeedbackReviewListProps) => {
     const {member} = props;
     const {list, status} = useQuestionList(member);
     const feedbacks = getAnswers(member);
+    const history = useHistory();
 
     if (status === 'loading') return <span>Loading</span>
     if (status === 'error') {
-        return <ErrorPage errorMessage={'We could not connect to our servers, try again latter'}/>;
+        history.push('/error/We could not connect to our servers, try again latter')
+        return null;
     }
     return (
         <>
