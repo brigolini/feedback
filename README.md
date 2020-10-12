@@ -11,7 +11,7 @@
 4. Test coverage is very poor. I believe we need at least 3 more hours on testing.
 5. Layout needs to be brushed up. As the exercise said it's not a priority, I never change some poor layout.
 6. Component directory deserves a good refactoring in order to be easy to maintain.
-7. Better patterns do Don't Repeat Myself
+7. Better patterns to Don't Repeat Myself
 
 ## Code hours
 
